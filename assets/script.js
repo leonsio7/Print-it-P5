@@ -17,6 +17,32 @@ const slides = [
 	}
 ]
 
+const arrow_left = document.querySelector(".arrow_left");
+const arrow_right = document.querySelector(".arrow_right");
+
+let index = 0;
+
+
+arrow_left.addEventListener('click', function() {
+	index--;
+	if(index === -1) {
+		index = 3;
+	}
+	const bannerImg = document.querySelector(".banner-img")
+	const image = slides[index].image;
+	bannerImg.src="./assets/images/slideshow/ " + image;
+});
+
+
+arrow_right.addEventListener('click',function() {
+	index++;
+	if(index === 4) {
+		index = 0;
+	}
+	const bannerImg = document.querySelector(".banner-img")
+	const image = slides[index].image
+	bannerImg.src="./assets/images/slideshow/" + image;
+});
 
 
 
